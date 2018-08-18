@@ -1,1 +1,1 @@
-# Techno-Resource-Blog
+# Techno-Blog
