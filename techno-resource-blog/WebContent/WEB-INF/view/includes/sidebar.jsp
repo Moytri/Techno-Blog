@@ -1,3 +1,4 @@
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
@@ -18,10 +19,21 @@
           <div class="card my-4">
             <h5 class="card-header">Categories</h5>
             <div class="card-body">
-              <div class="row">
+            <c:forEach var ="category" items="${categories}">
+            <div class="row">
+            	<div class="col-lg-12">
+            		<ul class="list-unstyled mb-0">
+	                    <li>                   
+	                      <a href="#">${category.categoryName}</a>
+	                    </li>
+	                 </ul>   
+            	</div>
+            </div>
+            </c:forEach>
+ <!--              <div class="row">
                 <div class="col-lg-6">
                   <ul class="list-unstyled mb-0">
-                    <li>
+                    <li>                   
                       <a href="#">Web Design</a>
                     </li>
                     <li>
@@ -45,7 +57,7 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
 
