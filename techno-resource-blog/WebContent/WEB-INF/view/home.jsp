@@ -1,4 +1,5 @@
 <jsp:include page="/WEB-INF/view/includes/header.jsp" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
