@@ -1,3 +1,4 @@
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <head>
 
     <meta charset="utf-8">
@@ -16,10 +17,17 @@
     <!-- reference our style sheet  -->
 	<link type = "text/css" rel = "stylesheet"
 		  href = "${pageContext.request.contextPath}/resources/css/blog-home.css" />
-</head>
-    
+		  
+	<link type = "text/css" rel = "stylesheet"
+		  href = "${pageContext.request.contextPath}/resources/css/drop-down-style.css" />
+		  
+	<!-- reference of vendor bootstrap style sheet  -->		  
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css">
+		
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </head>
+ </head>
 
   <body>
 
@@ -37,9 +45,17 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Categories</a>
-            </li>
+            
+            <!-- Code for dynamic dropdown  -->
+			<div class="dropdown nav-link">
+						Categories				  
+  				<div class="dropdown-content">
+	  				<c:forEach var ="category" items="${categories}">   
+						<a href="/category/${category.categoryName}">${category.categoryName}</a>
+	  				</c:forEach>
+  				</div>
+			</div>
+			
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
